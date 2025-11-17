@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuseoSpace — Virtual Art Exhibition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Lobby -->
+    <section class="lobby" id="lobby">
+        <div class="bg-animation">
+            <div class="art-silhouette"></div>
+            <div class="art-silhouette"></div>
+            <div class="art-silhouette"></div>
+        </div>
+        <button class="music-toggle" id="musicToggle">🔇 Music</button>
+        <audio id="bgAudio" src="audio/music.mp3" loop preload="none"></audio>
+        <div class="lobby-content">
+            <h1>MuseoSpace</h1>
+            <p>A Journey Through Digital Artistry</p>
+            <button class="start-btn" id="startBtn">Start the Tour</button>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery hidden" id="gallery">
+        <button class="back-btn hidden" id="backBtn">← Back </button>
+        <div class="gallery-header">
+            <h2>Curated Collections</h2>
+            <p>Scroll to explore our featured exhibitions</p>
+        </div>
+
+        <div class="collection" data-collection="renaissance">
+            <h3>Renaissance Masters</h3>
+            <div class="artwork-grid" id="renaissanceGrid"></div>
+        </div>
+
+        <div class="collection" data-collection="abstract">
+            <h3>Abstract Expressions</h3>
+            <div class="artwork-grid" id="abstractGrid"></div>
+        </div>
+
+        <div class="collection" data-collection="modern">
+            <h3>Modern Visions</h3>
+            <div class="artwork-grid" id="modernGrid"></div>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="nav-btn" id="prevBtn">← Previous</button>
+            <button class="nav-btn" id="nextBtn">Next →</button>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="artModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">×</span>
+            <img class="modal-img" id="modalImg" src="" alt="">
+            <div class="modal-details" id="modalDetails"></div>
+        </div>
+    </div>
+
+    <!-- Reflection -->
+    <section class="reflection hidden" id="reflection">
+        <h2>Visitor Reflection</h2>
+        <div class="feedback-form" id="feedbackForm">
+            <div class="form-group">
+                <label for="visitorName">Your Name</label>
+                <input type="text" id="visitorName" required>
+            </div>
+            <div class="form-group">
+                <label for="visitorEmail">Email</label>
+                <input type="email" id="visitorEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="favoriteArt">Favorite Artwork</label>
+                <select id="favoriteArt"></select>
+            </div>
+            <div class="form-group">
+                <label for="rating">Exhibition Rating</label>
+                <select id="rating">
+                    <option value="5">⭐⭐⭐⭐⭐ Extraordinary</option>
+                    <option value="4">⭐⭐⭐⭐ Excellent</option>
+                    <option value="3">⭐⭐⭐ Good</option>
+                    <option value="2">⭐⭐ Fair</option>
+                    <option value="1">⭐ Needs Improvement</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Your Thoughts</label>
+                <textarea id="comments" placeholder="Share your experience..."></textarea>
+            </div>
+            <div class="form-actions">
+                <button class="submit-btn" id="submitBtn">Submit Feedback</button>
+                <button class="restart-btn" id="restartBtn">Restart Tour</button>
+                <button class="share-btn" id="shareBtn">Share</button>
+            </div>
+        </div>
+        <div class="thank-you" id="thankYou">
+            <h3>Thank You!</h3>
+            <div class="thank-you-message" id="thankYouMessage"></div>
+            <button class="restart-btn" id="restartBtn2">Explore Again</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
